@@ -21,6 +21,7 @@ import com.google.common.annotations.GwtIncompatible;
 import com.google.common.annotations.J2ktIncompatible;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -108,7 +109,7 @@ public final class JdkFutureAdapters {
             .setDaemon(true)
             .setNameFormat("ListenableFutureAdapter-thread-%d")
             .build();
-    private static final Executor defaultAdapterExecutor =
+    private static final ExecutorService defaultAdapterExecutor =
         Executors.newVirtualThreadPerTaskExecutor();
 
     private final Executor adapterExecutor;

@@ -600,7 +600,7 @@ public class CacheBuilderTest extends TestCase {
             .maximumSize(5000)
             .build(countingIdentityLoader);
 
-    ExecutorService threadPool = Executors.newVirtualThreadPerTaskExecutor();
+    ExecutorService threadPool = Executors.newFixedThreadPool(nThreads);
     for (int i = 0; i < nTasks; i++) {
       @SuppressWarnings("unused") // https://errorprone.info/bugpattern/FutureReturnValueIgnored
       Future<?> possiblyIgnoredError =

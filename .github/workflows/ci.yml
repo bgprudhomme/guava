@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - master
+      - legacy
+      - fibers
   pull_request:
     branches:
       - master
+      - legacy
+      - fibers
 
 permissions:
   contents: read
@@ -20,7 +24,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        java: [ 8, 11, 17, 21 ]
+        java: [ 21 ]
         root-pom: [ 'pom.xml', 'android/pom.xml' ]
         include:
           - os: windows-latest

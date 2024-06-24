@@ -42,7 +42,7 @@ jobs:
 
         with:
           java-version: ${{ matrix.java }}
-          distribution: 'zulu'
+          distribution: 'temurin'
           cache: 'maven'
       - name: 'Install'
         shell: bash

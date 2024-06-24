@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - master
+      - legacy
+      - fibers
   pull_request:
     branches:
       - master
+      - legacy
+      - fibers
 
 permissions:
   contents: read
